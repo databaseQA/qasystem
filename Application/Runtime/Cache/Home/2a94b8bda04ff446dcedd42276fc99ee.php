@@ -12,7 +12,7 @@
 
                 <link rel="shortcut icon" href="/qasystem/Public/images/favicon.png" />
                 <!-- Style Sheet-->
-                <link rel="stylesheet" href="/qasystem/Public/style.css"/>
+
                 <link rel='stylesheet' id='bootstrap-css-css'  href='/qasystem/Public/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='responsive-css-css'  href='/qasystem/Public/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='/qasystem/Public/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
@@ -52,10 +52,11 @@
                         <!--<li><a href="faq.html">FAQs</a></li>-->
                         <li><a href="/qasystem/index.php/Home/Index/question">问题</a>
                             <ul class="sub-menu">
-                                <li><a href="blue-skin.html">Blue Skin</a></li>
-                                <li><a href="green-skin.html">Green Skin</a></li>
-                                <li><a href="red-skin.html">Red Skin</a></li>
-                                <li><a href="index-2.html">Default Skin</a></li>
+                                <?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$questionType): $mod = ($i % 2 );++$i;?><li><a href="/qasystem/index.php/Home/Question?type=<?php echo ($questionType["type_id"]); ?>"><?php echo ($questionType["type_name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+
+                                <!--<li><a href="green-skin.html">Green Skin</a></li>-->
+                                <!--<li><a href="red-skin.html">Red Skin</a></li>-->
+                                <!--<li><a href="index-2.html">Default Skin</a></li>-->
                             </ul>
                         </li>
                         <!--<li><a href="#">More</a>-->
@@ -78,24 +79,25 @@
 
         </div>
     </header>
+
+    <!-- Start of Search Wrapper -->
+    <div class="search-area-wrapper">
+        <div class="search-area container">
+            <h3 class="search-header">Have a Question?</h3>
+            <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
+
+            <form id="search-form" class="search-form clearfix" method="get" action="/qasystem/index.php/Home/Index/searchQuestion" autocomplete="off">
+                <input class="search-term required" type="text" id="s" name="key" placeholder="Type your search terms here" title="* Please enter a search term!" />
+                <input class="search-btn" type="submit" value="Search" />
+                <div id="search-error-container"></div>
+            </form>
+        </div>
+    </div>
+    <!-- End of Search Wrapper -->
 </div>
 <!-- End of Header -->
 
-                <!-- Start of Search Wrapper -->
-                <div class="search-area-wrapper">
-                        <div class="search-area container">
-                                <h3 class="search-header">Have a Question?</h3>
-                                <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
 
-                                <form id="search-form" class="search-form clearfix" method="get" action="#" autocomplete="off">
-                                        <input class="search-term required" type="text" id="s" name="s" placeholder="Type your search terms here" title="* Please enter a search term!" />
-                                        <input class="search-btn" type="submit" value="Search" />
-                                        <div id="search-error-container"></div>
-                                </form>
-                        </div>
-                </div>
-                <!-- End of Search Wrapper -->
-                <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" title="模板之家">模板之家</a></div>
 
                 <!-- Start of Page Container -->
                 <div class="page-container">
@@ -108,7 +110,9 @@
                                                 <!-- Basic Home Page Template -->
                                                 <div class="row separator">
                                                         <section class="span4 articles-list">
-                                                                <h3>Featured Articles</h3>
+                                                                <h3>
+                                                                    <?php echo ($title[0]); ?>
+                                                                </h3>
                                                                 <ul class="articles">
                                                                         <li class="article-entry standard">
                                                                                 <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
@@ -145,7 +149,7 @@
 
 
                                                         <section class="span4 articles-list">
-                                                                <h3>Latest Articles</h3>
+                                                                <h3><?php echo ($title[1]); ?></h3>
                                                                 <ul class="articles">
                                                                         <li class="article-entry standard">
                                                                                 <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>

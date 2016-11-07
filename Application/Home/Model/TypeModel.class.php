@@ -4,6 +4,6 @@ namespace Home\Model;
 
 use Think\Model;
 
-class typeModel extends Model{
+class TypeModel extends Model{
 
 }

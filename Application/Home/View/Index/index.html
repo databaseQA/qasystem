@@ -12,7 +12,7 @@
 
                 <link rel="shortcut icon" href="__PUBLIC__/images/favicon.png" />
                 <!-- Style Sheet-->
-                <link rel="stylesheet" href="__PUBLIC__/style.css"/>
+
                 <link rel='stylesheet' id='bootstrap-css-css'  href='__PUBLIC__/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='responsive-css-css'  href='__PUBLIC__/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='__PUBLIC__/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
@@ -30,21 +30,7 @@
         <body>
                 <include file="Public:header"/>
 
-                <!-- Start of Search Wrapper -->
-                <div class="search-area-wrapper">
-                        <div class="search-area container">
-                                <h3 class="search-header">Have a Question?</h3>
-                                <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
 
-                                <form id="search-form" class="search-form clearfix" method="get" action="#" autocomplete="off">
-                                        <input class="search-term required" type="text" id="s" name="s" placeholder="Type your search terms here" title="* Please enter a search term!" />
-                                        <input class="search-btn" type="submit" value="Search" />
-                                        <div id="search-error-container"></div>
-                                </form>
-                        </div>
-                </div>
-                <!-- End of Search Wrapper -->
-                <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" title="模板之家">模板之家</a></div>
 
                 <!-- Start of Page Container -->
                 <div class="page-container">
@@ -57,7 +43,9 @@
                                                 <!-- Basic Home Page Template -->
                                                 <div class="row separator">
                                                         <section class="span4 articles-list">
-                                                                <h3>Featured Articles</h3>
+                                                                <h3>
+                                                                    {$title[0]}
+                                                                </h3>
                                                                 <ul class="articles">
                                                                         <li class="article-entry standard">
                                                                                 <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
@@ -94,7 +82,7 @@
 
 
                                                         <section class="span4 articles-list">
-                                                                <h3>Latest Articles</h3>
+                                                                <h3>{$title[1]}</h3>
                                                                 <ul class="articles">
                                                                         <li class="article-entry standard">
                                                                                 <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
