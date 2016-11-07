@@ -90,3 +90,6 @@ ERR: 非法操作:register
 [ 2016-11-07T19:44:29+08:00 ] ::1 /qasystem/index.php/Home/Index
 ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
 
+[ 2016-11-07T20:16:12+08:00 ] ::1 /qasystem/index.php/Home/Index/searchQuestion?key=123
+ERR: 模板不存在:./Application/Home/View/Index/question.html
+

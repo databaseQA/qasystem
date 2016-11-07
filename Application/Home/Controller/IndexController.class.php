@@ -32,6 +32,7 @@ class IndexController extends Controller {
             $service = new IndexService();
             $questionList = $service->search($key);
             $this->assign('questions',$questionList);
+            $this->display('questionList');
         }
 
 
