@@ -80,7 +80,7 @@ span.tag-line {
 .main-nav {
   position: absolute;
   top: 5px;
-  right: 0;
+  right: 200px;
 }
 .main-nav div > ul {
   width: auto;
@@ -1413,4 +1413,18 @@ a#scroll-top:hover {
     float: none;
     display: inline-block;
   }
+}
+
+
+/*add css*/
+
+.login{
+  position: absolute;
+  top: 5px;
+  right: 0;
+  line-height: 56px;
+  height: 56px;
+}
+.login > a{
+  color: #fff;
 }

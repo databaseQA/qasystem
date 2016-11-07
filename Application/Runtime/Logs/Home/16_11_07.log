@@ -78,3 +78,12 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000063s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000107s ]
 
+[ 2016-11-07T19:09:27+08:00 ] ::1 /qasystem/index.php/Home/index-2.html
+ERR: 无法加载控制器:Index-2
+
+[ 2016-11-07T19:10:54+08:00 ] ::1 /qasystem/index.php/Home/home-categories-description.html
+ERR: 无法加载控制器:Home-categories-description
+
+[ 2016-11-07T19:15:42+08:00 ] ::1 /qasystem/index.php/Home/Index/register
+ERR: 非法操作:register
+
