@@ -1,0 +1,35 @@
+[33mcommit 18a640f639324031a71b19f199e2cad2447c6ac0[m
+Author: ali <1364137942@qq.com>
+Date:   Mon Nov 7 20:58:51 2016 +0800
+
+    做了简单的搜索功能
+
+[33mcommit 063756cabbb3803cbed7e3222012b3364fe1a9ff[m
+Author: RainieWu <479086484@qq.com>
+Date:   Mon Nov 7 20:15:10 2016 +0800
+
+    commit test.txt
+
+[33mcommit 606ce85de8dda12eb987cf21b49913e25cc2349c[m
+Author: ali <1364137942@qq.com>
+Date:   Mon Nov 7 20:09:15 2016 +0800
+
+    做了一部分的搜索
+
+[33mcommit a2fb1ab12278da2a74add92876af36af3bbf1c00[m
+Author: ali <1364137942@qq.com>
+Date:   Mon Nov 7 19:27:00 2016 +0800
+
+    finish header&footer template,index template
+
+[33mcommit f698ccc3441e582bfffc3ff8ac95c99a6d8582a8[m
+Author: ali <1364137942@qq.com>
+Date:   Mon Nov 7 19:09:00 2016 +0800
+
+    remove some config
+
+[33mcommit 80776e759ec29ab2e369384f3386c9a8426640e3[m
+Author: ali <1364137942@qq.com>
+Date:   Mon Nov 7 18:49:30 2016 +0800
+
+    init
