@@ -12,13 +12,12 @@ class UserController extends Controller {
         header("Content-Type: text/html; charset=utf-8");
     }
     
-    public function index(){
-        checkUserLogin();
+    public function register(){
         $this->display();
     }
     
-    public function register() {
-        $this->display();
+    public function doRegister() {
+
         $data = array(
             "user_name" => $_POST['username'],
             "user_pwd" => $_POST['password'],
@@ -37,8 +36,11 @@ class UserController extends Controller {
             echo "<script>alert('注册失败！')</script>";
         }
     }
-    
-    public function login() {
+    public function login(){
+        $this->display();
+    }
+
+    public function doLogin() {
         if(isset($_POST['submit'])) {
             $data = array(
                 "user_name" => $_POST['username'],

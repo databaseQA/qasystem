@@ -10,10 +10,10 @@
         <!-- Style Sheet-->
         <link rel='stylesheet' id='login-css-css'  href='/qasystem/Public/css/login.css' type='text/css' media='all' />
         <link rel='stylesheet' id='bootstrap-css-css'  href='/qasystem/Public/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
-        <!--<link rel='stylesheet' id='responsive-css-css'  href='/qasystem/Public/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
+        <link rel='stylesheet' id='responsive-css-css'  href='/qasystem/Public/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
         <link rel='stylesheet' id='pretty-photo-css-css'  href='/qasystem/Public/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
         <link rel='stylesheet' id='main-css-css'  href='/qasystem/Public/css/main5152.css?ver=1.0' type='text/css' media='all' />
-        <link rel='stylesheet' id='custom-css-css'  href='/qasystem/Public/css/custom5152.html?ver=1.0' type='text/css' media='all' />-->
+        <!--<link rel='stylesheet' id='custom-css-css'  href='/qasystem/Public/css/custom5152.html?ver=1.0' type='text/css' media='all' />-->
     </head>
     
     <body>
@@ -21,12 +21,12 @@
         <div id="main-wrapper">
         		<!-- start of page content -->
                 <div id="page-content">
-                	<img src="/qasystem/Public/images/logo.png" />
+                    <a href="/qasystem/index.php/Home"><img src="/qasystem/Public/images/logo.png" /></a>
                     <div class="link">
-                    	<a href="login">登录</a>
-                    	<a href="register" class="active">注册</a>
+                    	<a href="/qasystem/index.php/Home/User/login">登录</a>
+                    	<a href="/qasystem/index.php/Home/User/register" class="active">注册</a>
                     </div>
-                    <form class="login-form" action="" method="post">
+                    <form class="login-form" action="/qasystem/index.php/Home/User/doRegister" method="post">
                     	<div>
                         	<input type="text" name="username" id="username" value="" title="" />
                         </div>
