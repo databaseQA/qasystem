@@ -4,7 +4,7 @@ return array(
     'URL_PARAMS_BIND_TYPE' => 0,
     'DB_HOST' => 'localhost',
     'DB_USER' => 'root',
-    'DB_PWD' => '',
+    'DB_PWD' => 'ali',
     'DB_PREFIX' => '',                      // 数据库表前缀
     'DB_NAME' => 'qasystem',
 //    'SHOW_PAGE_TRACE' => true,
