@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#main-wrapper{
+	background:url(../images/main-bg.jpg);
+	height:800px;
+}
+
+#page-content{
+	width:264px;
+	text-align:center;
+	margin:auto;
+	padding-top:100px;
+}
+
+#page-content img{
+	margin:40px;
+}
+
+#page-content .link a{
+	font-size:14px;
+	padding-bottom:3px;
+	padding-left:5px;
+	padding-right:5px;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+#page-content .link a:hover{
+	text-decoration:none;
+	color:#FFF;
+}
+
+#page-content .link .active{
+	border-bottom:1px solid #FFF;
+	color:#FFF;
+}
+
+.login-form{
+	display:table;
+	margin-top:40px;
+}
+
+.login-form div{
+	margin-bottom:10px;
+}
+
+.login-form input{
+	width:250px;
+}
+
+#username, #password{
+	height:32px;
+}
