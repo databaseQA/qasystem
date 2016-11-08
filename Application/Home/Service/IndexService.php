@@ -17,6 +17,10 @@ class IndexService{
         $map['q_title'] = array('like', '%'.$key.'%');
         $map['q_content'] = array('like', '%'.$key.'%');
         $map['_logic'] = 'or';
-        return $questionDb->where($map)->select();
+        return $questionDb
+            ->field('question.q_id,question.q_title,question.q_time,question.a_num,user.user_nickname')
+            ->where($map)
+            ->join('user on user.user_id = question.user_id')
+            ->select();
     }
 }
