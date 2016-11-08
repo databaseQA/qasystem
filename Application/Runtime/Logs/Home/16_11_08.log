@@ -19,3 +19,39 @@ ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using pas
 [ 2016-11-08T09:56:52+08:00 ] ::1 /qasystem/index.php/Home/User/login
 ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
 
+[ 2016-11-08T10:20:55+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:21:23+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:21:41+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:21:59+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:22:53+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:23:20+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:23:34+08:00 ] ::1 /qasystem/index.php/Home/User/contact
+ERR: 非法操作:contact
+
+[ 2016-11-08T10:23:38+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:28:11+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:33:22+08:00 ] ::1 /qasystem/index.php/Home/User/index
+ERR: 模板不存在:./Application/Home/View/User/index.html
+
+[ 2016-11-08T10:33:30+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T10:33:43+08:00 ] ::1 /qasystem/index.php/Home/User/register
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+

@@ -18,6 +18,7 @@ class UserController extends Controller {
     }
     
     public function register() {
+        $this->display();
         $data = array(
             "user_name" => $_POST['username'],
             "user_pwd" => $_POST['password'],
