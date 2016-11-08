@@ -8,7 +8,7 @@
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <title>Knowledge Base Theme</title>
+                <title>KnowledgeBase</title>
 
                 <link rel="shortcut icon" href="/qasystem/Public/images/favicon.png" />
                 <!-- Style Sheet-->
@@ -35,8 +35,8 @@
 
             <div class="logo-container">
                 <!-- Website Logo -->
-                <a href="/qasystem/index.php/Home/Index"  title="Knowledge Base Theme">
-                    <img src="/qasystem/Public/images/logo.png" alt="Knowledge Base Theme">
+                <a href="/qasystem/index.php/Home/Index"  title="KnowledgeBase">
+                    <img src="/qasystem/Public/images/logo.png" alt="KnowledgeBase">
                 </a>
                 <!--<span class="tag-line">Premium WordPress Theme</span>-->
             </div>
@@ -72,8 +72,8 @@
             </nav>
 
             <div class="login">
-                <a href="/qasystem/index.php/Home/Index/register">注册</a>|
-                <a href="/qasystem/index.php/Home/Index/login">登录</a>
+                <a href="/qasystem/index.php/Home/User/register">注册</a>|
+                <a href="/qasystem/index.php/Home/User/login">登录</a>
             </div>
             <!-- End of Main Navigation -->
 
@@ -97,13 +97,10 @@
 </div>
 <!-- End of Header -->
 
-
-
                 <!-- Start of Page Container -->
                 <div class="page-container">
                         <div class="container">
                                 <div class="row">
-
                                         <!-- start of page content -->
                                         <div class="span8 page-content">
 
@@ -252,7 +249,7 @@
             <div class="row">
                 <div class="span6">
                     <p class="copyright">
-                        Copyright © 2016. All Rights Reserved by ali & RainieWu
+                        Copyright © 2016. All Rights Reserved by ali & Rainie.
                     </p>
                 </div>
 

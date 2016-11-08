@@ -54,5 +54,28 @@
                 <script type='text/javascript' src='/qasystem/Public/js/jquery.validate.minfc6b.js?ver=1.10.0'></script>
                 <script type='text/javascript' src='/qasystem/Public/js/custom5152.js?ver=1.0'></script>-->
 
+                <!-- Start of Footer -->
+<footer id="footer-wrapper">
+
+    <!-- end of #footer -->
+
+    <!-- Footer Bottom -->
+    <div id="footer-bottom-wrapper">
+        <div id="footer-bottom" class="container">
+            <div class="row">
+                <div class="span6">
+                    <p class="copyright">
+                        Copyright © 2016. All Rights Reserved by ali & Rainie.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End of Footer Bottom -->
+
+</footer>
+<!-- End of Footer -->
+                
         </body>
 </html>
