@@ -90,3 +90,21 @@ ERR: 非法操作:register
 [ 2016-11-07T19:44:29+08:00 ] ::1 /qasystem/index.php/Home/Index
 ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
 
+[ 2016-11-07T20:55:20+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-07T20:56:28+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-07T20:56:40+08:00 ] ::1 /qasystem/index.php/Home
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-07T20:56:52+08:00 ] ::1 /qasystem/index.php/Home/Index.index
+ERR: 无法加载控制器:Index.index
+
+[ 2016-11-07T20:56:59+08:00 ] ::1 /qasystem/index.php/Home/Index/index
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-07T21:58:31+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+

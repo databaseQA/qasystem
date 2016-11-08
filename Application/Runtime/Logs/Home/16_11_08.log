@@ -1,0 +1,21 @@
+[ 2016-11-08T09:45:27+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T09:45:39+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T09:45:44+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T09:46:23+08:00 ] ::1 /qasystem/index.php/Home/User/resgiter
+ERR: 非法操作:resgiter
+
+[ 2016-11-08T09:56:20+08:00 ] ::1 /qasystem/index.php/Home/User/login
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T09:56:46+08:00 ] ::1 /qasystem/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-11-08T09:56:52+08:00 ] ::1 /qasystem/index.php/Home/User/login
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
