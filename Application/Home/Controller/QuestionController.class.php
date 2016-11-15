@@ -14,6 +14,7 @@ class QuestionController extends Controller {
     
     public function index(){
         checkUserLogin();
+        $this->display();
     }
     
     public function askQuestion() {
