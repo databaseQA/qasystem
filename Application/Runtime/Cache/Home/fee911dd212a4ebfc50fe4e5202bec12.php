@@ -35,8 +35,8 @@
 
             <div class="logo-container">
                 <!-- Website Logo -->
-                <a href="/qasystem/index.php/Home/Index"  title="Knowledge Base Theme">
-                    <img src="/qasystem/Public/images/logo.png" alt="Knowledge Base Theme">
+                <a href="/qasystem/index.php/Home/Index"  title="KnowledgeBase">
+                    <img src="/qasystem/Public/images/logo.png" alt="KnowledgeBase">
                 </a>
                 <!--<span class="tag-line">Premium WordPress Theme</span>-->
             </div>
@@ -46,11 +46,11 @@
             <nav class="main-nav">
                 <div class="menu-top-menu-container">
                     <ul id="menu-top-menu" class="clearfix">
-                        <li class="current-menu-item"><a href="/qasystem/index.php/Home/Index">主页</a></li>
+                        <li class="current-menu-item"><a href="<?php echo U('Index/index');?>">主页</a></li>
                         <!--<li><a href="home-categories-articles.html">Home 3</a></li>-->
                         <!--<li><a href="articles-list.html">Articles List</a></li>-->
                         <!--<li><a href="faq.html">FAQs</a></li>-->
-                        <li><a href="/qasystem/index.php/Home/Index/question">问题</a>
+                        <li><a href="/qasystem/index.php/Home/Index/question">提问</a>
                             <ul class="sub-menu">
                                 <?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$questionType): $mod = ($i % 2 );++$i;?><li><a href="/qasystem/index.php/Home/Question?type=<?php echo ($questionType["type_id"]); ?>"><?php echo ($questionType["type_name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 
@@ -72,28 +72,16 @@
             </nav>
 
             <div class="login">
-                <a href="/qasystem/index.php/Home/Index/register">注册</a>|
-                <a href="/qasystem/index.php/Home/Index/login">登录</a>
+                <a href="<?php echo U('User/login');?>">登录</a>
+                |
+                <a href="<?php echo U('User/register');?>">注册</a>
             </div>
             <!-- End of Main Navigation -->
 
         </div>
     </header>
 
-    <!-- Start of Search Wrapper -->
-    <div class="search-area-wrapper">
-        <div class="search-area container">
-            <h3 class="search-header">Have a Question?</h3>
-            <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
-
-            <form id="search-form" class="search-form clearfix" method="get" action="/qasystem/index.php/Home/Index/searchQuestion" autocomplete="off">
-                <input class="search-term required" type="text" id="s" name="key" placeholder="Type your search terms here" title="* Please enter a search term!" />
-                <input class="search-btn" type="submit" value="Search" />
-                <div id="search-error-container"></div>
-            </form>
-        </div>
-    </div>
-    <!-- End of Search Wrapper -->
+    
 </div>
 <!-- End of Header -->
 
@@ -125,8 +113,7 @@
             </div>
             <!-- end of page content -->
 
-
-            <!-- start of sidebar -->
+<!-- start of sidebar -->
             <aside class="span4 page-sidebar">
 
                 <section class="widget">
@@ -175,6 +162,7 @@
 
             </aside>
             <!-- end of sidebar -->
+            
         </div>
     </div>
 </div>
@@ -190,7 +178,7 @@
             <div class="row">
                 <div class="span6">
                     <p class="copyright">
-                        Copyright © 2016. All Rights Reserved by ali & RainieWu
+                        Copyright © 2016. All Rights Reserved by ali & Rainie.
                     </p>
                 </div>
 

@@ -17,14 +17,16 @@
     </head>
     
     <body>
+        <include file="Public:header"/>
+        
     	<!-- Start of Page Container -->
         <div id="main-wrapper">
         		<!-- start of page content -->
                 <div id="page-content">
                     <a href="__MODULE__"><img src="__PUBLIC__/images/logo.png" /></a>
                     <div class="link">
-                    	<a href="__URL__/login" class="active">登录</a>
-                    	<a href="__URL__/register">注册</a>
+                    	<a href="{:U('User/login')}" class="active">登录</a>
+                    	<a href="{:U('User/register')}">注册</a>
                     </div>
                     <form class="login-form" action="__URL__/doLogin" method="post">
                     	<div>

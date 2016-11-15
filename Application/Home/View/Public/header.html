@@ -2,7 +2,6 @@
 <div class="header-wrapper">
     <header>
         <div class="container">
-
             <div class="logo-container">
                 <!-- Website Logo -->
                 <a href="__URL__"  title="KnowledgeBase">
@@ -10,27 +9,28 @@
                 </a>
                 <!--<span class="tag-line">Premium WordPress Theme</span>-->
             </div>
-
-
+            
             <!-- Start of Main Navigation -->
             <nav class="main-nav">
                 <div class="menu-top-menu-container">
                     <ul id="menu-top-menu" class="clearfix">
-                        <li class="current-menu-item"><a href="__URL__">主页</a></li>
+                        <li class="current-menu-item"><a href="{:U('Index/index')}">主页</a></li>
                         <!--<li><a href="home-categories-articles.html">Home 3</a></li>-->
                         <!--<li><a href="articles-list.html">Articles List</a></li>-->
                         <!--<li><a href="faq.html">FAQs</a></li>-->
-                        <li><a href="__URL__/question">问题</a>
+                        <li><a href="{:U('Question/askQuestion')}">提问</a>
                             <ul class="sub-menu">
                                 <volist name="type" id="questionType">
                                     <li><a href="__MODULE__/Question?type={$questionType.type_id}">{$questionType.type_name}</a></li>
                                 </volist>
-
+                                
                                 <!--<li><a href="green-skin.html">Green Skin</a></li>-->
                                 <!--<li><a href="red-skin.html">Red Skin</a></li>-->
                                 <!--<li><a href="index-2.html">Default Skin</a></li>-->
+                                
                             </ul>
                         </li>
+                        
                         <!--<li><a href="#">More</a>-->
                         <!--<ul class="sub-menu">-->
                         <!--<li><a href="full-width.html">Full Width</a></li>-->
@@ -38,33 +38,20 @@
                         <!--<li><a href="page.html">Sample Page</a></li>-->
                         <!--</ul>-->
                         <!--</li>-->
-                        <li><a href="contact.html">Contact</a></li>
+                        
+                        <li><a href="{:U('Index/contact')}">联系我们</a></li>
                     </ul>
                 </div>
             </nav>
 
             <div class="login">
-                <a href="__MODULE__/User/register">注册</a>|
-                <a href="__MODULE__/User/login">登录</a>
+                <a href="{:U('User/login')}">登录</a>
+                |
+                <a href="{:U('User/register')}">注册</a>
             </div>
             <!-- End of Main Navigation -->
 
         </div>
     </header>
-
-    <!-- Start of Search Wrapper -->
-    <div class="search-area-wrapper">
-        <div class="search-area container">
-            <h3 class="search-header">Have a Question?</h3>
-            <p class="search-tag-line">If you have any question you can ask below or enter what you are looking for!</p>
-
-            <form id="search-form" class="search-form clearfix" method="get" action="__URL__/searchQuestion" autocomplete="off">
-                <input class="search-term required" type="text" id="s" name="key" placeholder="Type your search terms here" title="* Please enter a search term!" />
-                <input class="search-btn" type="submit" value="Search" />
-                <div id="search-error-container"></div>
-            </form>
-        </div>
-    </div>
-    <!-- End of Search Wrapper -->
 </div>
 <!-- End of Header -->

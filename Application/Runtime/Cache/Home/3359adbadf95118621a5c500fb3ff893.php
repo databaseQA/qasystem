@@ -17,14 +17,70 @@
     </head>
     
     <body>
+        <!-- Start of Header -->
+<div class="header-wrapper">
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <!-- Website Logo -->
+                <a href="/qasystem/index.php/Home/User"  title="KnowledgeBase">
+                    <img src="/qasystem/Public/images/logo.png" alt="KnowledgeBase">
+                </a>
+                <!--<span class="tag-line">Premium WordPress Theme</span>-->
+            </div>
+            
+            <!-- Start of Main Navigation -->
+            <nav class="main-nav">
+                <div class="menu-top-menu-container">
+                    <ul id="menu-top-menu" class="clearfix">
+                        <li class="current-menu-item"><a href="<?php echo U('Index/index');?>">主页</a></li>
+                        <!--<li><a href="home-categories-articles.html">Home 3</a></li>-->
+                        <!--<li><a href="articles-list.html">Articles List</a></li>-->
+                        <!--<li><a href="faq.html">FAQs</a></li>-->
+                        <li><a href="<?php echo U('Question/askQuestion');?>">提问</a>
+                            <ul class="sub-menu">
+                                <?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$questionType): $mod = ($i % 2 );++$i;?><li><a href="/qasystem/index.php/Home/Question?type=<?php echo ($questionType["type_id"]); ?>"><?php echo ($questionType["type_name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                                
+                                <!--<li><a href="green-skin.html">Green Skin</a></li>-->
+                                <!--<li><a href="red-skin.html">Red Skin</a></li>-->
+                                <!--<li><a href="index-2.html">Default Skin</a></li>-->
+                                
+                            </ul>
+                        </li>
+                        
+                        <!--<li><a href="#">More</a>-->
+                        <!--<ul class="sub-menu">-->
+                        <!--<li><a href="full-width.html">Full Width</a></li>-->
+                        <!--<li><a href="elements.html">Elements</a></li>-->
+                        <!--<li><a href="page.html">Sample Page</a></li>-->
+                        <!--</ul>-->
+                        <!--</li>-->
+                        
+                        <li><a href="<?php echo U('Index/contact');?>">联系我们</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="login">
+                <a href="<?php echo U('User/login');?>">登录</a>
+                |
+                <a href="<?php echo U('User/register');?>">注册</a>
+            </div>
+            <!-- End of Main Navigation -->
+
+        </div>
+    </header>
+</div>
+<!-- End of Header -->
+        
     	<!-- Start of Page Container -->
         <div id="main-wrapper">
         		<!-- start of page content -->
                 <div id="page-content">
                     <a href="/qasystem/index.php/Home"><img src="/qasystem/Public/images/logo.png" /></a>
                     <div class="link">
-                    	<a href="/qasystem/index.php/Home/User/login">登录</a>
-                    	<a href="/qasystem/index.php/Home/User/register" class="active">注册</a>
+                    	<a href="<?php echo U('User/login');?>">登录</a>
+                    	<a href="<?php echo U('User/register');?>" class="active">注册</a>
                     </div>
                     <form class="login-form" action="/qasystem/index.php/Home/User/doRegister" method="post">
                     	<div>
@@ -56,9 +112,6 @@
 
                 <!-- Start of Footer -->
 <footer id="footer-wrapper">
-
-    <!-- end of #footer -->
-
     <!-- Footer Bottom -->
     <div id="footer-bottom-wrapper">
         <div id="footer-bottom" class="container">
@@ -68,12 +121,10 @@
                         Copyright © 2016. All Rights Reserved by ali & Rainie.
                     </p>
                 </div>
-
             </div>
         </div>
     </div>
     <!-- End of Footer Bottom -->
-
 </footer>
 <!-- End of Footer -->
                 
