@@ -17,13 +17,12 @@ class UserController extends Controller {
     }
     
     public function doRegister() {
-
         $data = array(
             "user_name" => $_POST['username'],
             "user_pwd" => $_POST['password'],
-            "user_nickname" => $_POST['nickname'],
-            "user_gender" => $_POST['gender'],
-            "user_email" => $_POST['email']
+            //"user_nickname" => $_POST['nickname'],
+            //"user_gender" => $_POST['gender'],
+            //"user_email" => $_POST['email']
         );
         $user = new UserService();
         $result = $user->register($data);
@@ -34,8 +33,10 @@ class UserController extends Controller {
         }
         else {
             echo "<script>alert('注册失败！')</script>";
+            $this->redirect('User/register');
         }
     }
+    
     public function login(){
         $this->display();
     }
@@ -54,7 +55,7 @@ class UserController extends Controller {
             }
             else {
                 echo "<script>alert('用户名或密码错误！')</script>";
-                $this->display();
+                $this->redirect('User/login');
             }
         }
         else {

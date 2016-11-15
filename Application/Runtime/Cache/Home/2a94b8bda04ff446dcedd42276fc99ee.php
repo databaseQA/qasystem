@@ -187,54 +187,50 @@
                                         <!-- end of page content -->
 
                                         <!-- start of sidebar -->
-            <aside class="span4 page-sidebar">
-
-                <section class="widget">
-                    <div class="support-widget">
-                        <h3 class="title">Support</h3>
-                        <p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
-                    </div>
-                </section>
-
-                <section class="widget">
-                    <div class="quick-links-widget">
-                        <h3 class="title">快速导航</h3>
-                        <ul id="menu-quick-links" class="menu clearfix">
-                            <li><a href="<?php echo U('Index/index');?>">主页</a></li>
-                            <li><a href="<?php echo U('Question/askQuestion');?>">提问</a></li>
-                            <li><a href="<?php echo U('Answer/answerQuestion');?>">回答</a></li>
-                            <li><a href="<?php echo U('Index/contact');?>">联系我们</a></li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="widget">
-                    <h3 class="title">Tags</h3>
-                    <div class="tagcloud">
-                        <a href="#" class="btn btn-mini">basic</a>
-                        <a href="#" class="btn btn-mini">beginner</a>
-                        <a href="#" class="btn btn-mini">blogging</a>
-                        <a href="#" class="btn btn-mini">colour</a>
-                        <a href="#" class="btn btn-mini">css</a>
-                        <a href="#" class="btn btn-mini">date</a>
-                        <a href="#" class="btn btn-mini">design</a>
-                        <a href="#" class="btn btn-mini">files</a>
-                        <a href="#" class="btn btn-mini">format</a>
-                        <a href="#" class="btn btn-mini">header</a>
-                        <a href="#" class="btn btn-mini">images</a>
-                        <a href="#" class="btn btn-mini">plugins</a>
-                        <a href="#" class="btn btn-mini">setting</a>
-                        <a href="#" class="btn btn-mini">templates</a>
-                        <a href="#" class="btn btn-mini">theme</a>
-                        <a href="#" class="btn btn-mini">time</a>
-                        <a href="#" class="btn btn-mini">videos</a>
-                        <a href="#" class="btn btn-mini">website</a>
-                        <a href="#" class="btn btn-mini">wordpress</a>
-                    </div>
-                </section>
-
-            </aside>
-            <!-- end of sidebar -->
+<aside class="span4 page-sidebar">
+    <section class="widget">
+        <div class="support-widget">
+            <h3 class="title">Support</h3>
+            <p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
+        </div>
+    </section>
+    <section class="widget">
+        <div class="quick-links-widget">
+            <h3 class="title">快速导航</h3>
+            <ul id="menu-quick-links" class="menu clearfix">
+                <li><a href="<?php echo U('Index/index');?>">主页</a></li>
+                <li><a href="<?php echo U('Question/askQuestion');?>">提问</a></li>
+                <li><a href="<?php echo U('Answer/answerQuestion');?>">回答</a></li>
+                <li><a href="<?php echo U('Index/contact');?>">联系我们</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="widget">
+        <h3 class="title">Tags</h3>
+        <div class="tagcloud">
+            <a href="#" class="btn btn-mini">basic</a>
+            <a href="#" class="btn btn-mini">beginner</a>
+            <a href="#" class="btn btn-mini">blogging</a>
+            <a href="#" class="btn btn-mini">colour</a>
+            <a href="#" class="btn btn-mini">css</a>
+            <a href="#" class="btn btn-mini">date</a>
+            <a href="#" class="btn btn-mini">design</a>
+            <a href="#" class="btn btn-mini">files</a>
+            <a href="#" class="btn btn-mini">format</a>
+            <a href="#" class="btn btn-mini">header</a>
+            <a href="#" class="btn btn-mini">images</a>
+            <a href="#" class="btn btn-mini">plugins</a>
+            <a href="#" class="btn btn-mini">setting</a>
+            <a href="#" class="btn btn-mini">templates</a>
+            <a href="#" class="btn btn-mini">theme</a>
+            <a href="#" class="btn btn-mini">time</a>
+            <a href="#" class="btn btn-mini">videos</a>
+            <a href="#" class="btn btn-mini">website</a>
+            <a href="#" class="btn btn-mini">wordpress</a>
+        </div>
+    </section>
+</aside>
+<!-- end of sidebar -->
                                         
                                 </div>
                         </div>
