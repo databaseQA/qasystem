@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016-11-02 06:06:19
+-- Generation Time: 2016-11-15 04:30:33
 -- 服务器版本： 5.6.20
 -- PHP Version: 5.5.15
 
@@ -110,7 +110,7 @@ DELIMITER ;
 
 CREATE TABLE IF NOT EXISTS `type` (
 `type_id` int(50) NOT NULL COMMENT '问题类型ID',
-  `typr_name` varchar(20) NOT NULL COMMENT '问题类型'
+  `type_name` varchar(20) NOT NULL COMMENT '问题类型'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -126,9 +126,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_nickname` varchar(50) DEFAULT NULL COMMENT '用户昵称，可修改',
   `user_gender` char(1) DEFAULT NULL COMMENT '用户性别',
   `user_email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
+  `user_intro` varchar(100) DEFAULT NULL COMMENT '个人简介',
   `q_num` int(20) NOT NULL DEFAULT '0' COMMENT '用户提问数',
   `a_num` int(20) NOT NULL DEFAULT '0' COMMENT '用户回答数'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Indexes for dumped tables
@@ -156,7 +157,7 @@ ALTER TABLE `question`
 -- Indexes for table `type`
 --
 ALTER TABLE `type`
- ADD PRIMARY KEY (`type_id`), ADD UNIQUE KEY `typr_name` (`typr_name`);
+ ADD PRIMARY KEY (`type_id`), ADD UNIQUE KEY `typr_name` (`type_name`);
 
 --
 -- Indexes for table `user`
@@ -192,7 +193,7 @@ MODIFY `type_id` int(50) NOT NULL AUTO_INCREMENT COMMENT '问题类型ID';
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-MODIFY `user_id` int(50) NOT NULL AUTO_INCREMENT COMMENT '用户ID';
+MODIFY `user_id` int(50) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
