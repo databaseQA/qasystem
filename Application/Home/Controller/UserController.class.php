@@ -80,10 +80,15 @@ class UserController extends Controller {
     
     public function modify() {
         checkUserLogin();
+        $this->display();
+    }
+    
+    public function doModify() {
         $data = array(
             "user_nickname" => $_POST['nickname'],
             "user_gender" => $_POST['gender'],
-            "user_email" => $_POST['email']
+            "user_email" => $_POST['email'],
+            "user_intro" => $_POST['intro']
         );
         $user = new UserService();
         $result = $user->modify(session('user')['user_id'], $data);

@@ -199,7 +199,7 @@
             <h3 class="title">快速导航</h3>
             <ul id="menu-quick-links" class="menu clearfix">
                 <li><a href="<?php echo U('Index/index');?>">主页</a></li>
-                <li><a href="<?php echo U('Question/askQuestion');?>">提问</a></li>
+                <li><a href="<?php echo U('Question/index');?>">提问</a></li>
                 <li><a href="<?php echo U('Answer/answerQuestion');?>">回答</a></li>
                 <li><a href="<?php echo U('Index/contact');?>">联系我们</a></li>
             </ul>
