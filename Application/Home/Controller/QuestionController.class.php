@@ -68,11 +68,17 @@ class QuestionController extends Controller {
         $id = $_GET['id'];
         if($id){
             $service = new QuestionService();
-            $service->getQuestion($id);
-        }else{
-            return false;
+            $result = $service->getQuestion($id);
+
+            $this->assign('question', $result['question']);
+
+            $this->assign('answers', $result['answer']);
         }
-
-
+        $this->display('question');
+    }
+    public function addLike(){
+        $a_id = $_POST['id'];
+        $service = new QuestionService();
+        $service->addLike($a_id);
     }
 }

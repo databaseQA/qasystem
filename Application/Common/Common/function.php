@@ -54,7 +54,7 @@ function checkAdminLogin(){
 function checkUserLogin() {
     if(session('user')['user_name'] == NULL) {
         echo "<script>alert('请先登录！')</script>";
-        redirect('../User/login');
+        redirect('User/login');
     }
 }
 //把搜索筛选的信息封装

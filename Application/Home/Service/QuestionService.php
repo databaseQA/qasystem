@@ -7,9 +7,25 @@ use Home\Model\AnswerModel;
 
 class QuestionService{
     public function getQuestion($qId) {
-        $question = new QuestionModel();
+        $questionDb = new QuestionModel();
         $map['q_id'] = $qId;
-        $result = $question->where($map)->select();
+        $result['question'] = $questionDb
+            ->where($map)
+            ->field('question.*, user.user_name, type_name')
+            ->join('user ON user.user_id = question.user_id')
+            ->join('type on question.type_id = type.type_id')
+            ->find();
+
+
+        $answerDb = new AnswerModel();
+
+        $result['answer'] = $answerDb
+            ->where($map)
+            ->field('answer.*,user.user_name')
+            ->order('yesVote desc, a_time desc')
+            ->join('user ON user.user_id = answer.user_id')
+            ->select();
+
         return $result;
     }
     
@@ -56,4 +72,11 @@ class QuestionService{
             return FALSE;
         }
     }
+
+    public function addLike($id){
+        $map['a_id'] = $id;
+        $answerDb = new AnswerModel();
+        $answerDb->where($map)->setInc('yesVote');
+    }
+
 }

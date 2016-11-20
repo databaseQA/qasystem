@@ -137,7 +137,7 @@
                                                                                         <span class="article-meta"><?php echo ($question["q_time"]); ?> By <?php echo ($question["user_name"]); ?></span>
                                                                                         <span class="like-count"><?php echo ($question["a_num"]); ?></span>
                                                                                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                                                                       
+
                                                                 </ul>
                                                         </section>
                                                 </div>
