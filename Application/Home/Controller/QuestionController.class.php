@@ -81,4 +81,20 @@ class QuestionController extends Controller {
         $service = new QuestionService();
         $service->addLike($a_id);
     }
+    public function answerQuestion(){
+        checkUserLogin();
+        $data = array(
+            'q_id' => $_POST['q_id'],
+            'user_id' => session('user.user_id'),
+            'a_content' => $_POST['answer'],
+            'a_time' => date("Y-m-d H:i:s")
+        );
+        $service = new QuestionService();
+        $re = $service->answerQuestion($data);
+        if($re){
+            $this->ajaxReturn(array('code' => 1, 'msg' => 'success'));
+        }else{
+            $this->ajaxReturn(array('code' => 0, 'msg' => 'fail'));
+        }
+    }
 }

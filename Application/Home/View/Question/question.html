@@ -125,48 +125,22 @@
                     </ol>
 
                     <div id="respond">
+                        <div>&nbsp;</div>
+                        <if condition="session('user.user_name') eq ''">
+                            <a href="__MODULE__/User/login.html" class="btn">回答</a>
+                            <else/>
 
-                        <h3>Leave a Reply</h3>
-
-                        <div class="cancel-comment-reply">
-                            <a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Click here to cancel reply.</a>
-                        </div>
-
-
-                        <form action="#" method="post" id="commentform">
-
-
-                            <p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
-
-                            <div>
-                                <label for="author">Name *</label>
-                                <input class="span4" type="text" name="author" id="author" value="" size="22">
-                            </div>
-
-                            <div>
-                                <label for="email">Email *</label>
-                                <input class="span4" type="text" name="email" id="email" value="" size="22" >
-                            </div>
-
-                            <div>
-                                <label for="url">Website</label>
-                                <input class="span4" type="text" name="url" id="url" value="" size="22" >
-                            </div>
-
-
-                            <div>
-                                <label for="comment">Comment</label>
-                                <textarea class="span8" name="comment" id="comment" cols="58" rows="10"></textarea>
-                            </div>
-
-                            <p class="allowed-tags">You can use these HTML tags and attributes <small><code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>
-
-                            <div>
-                                <input class="btn" name="submit" type="submit" id="submit"  value="Submit Comment">
-                            </div>
-
-                        </form>
-
+                            <form method="post" id="commentform">
+                                <div>
+                                    <h3><label for="answer">回答此问题：</label></h3>
+                                    <textarea class="span8" name="answer" id="answer" cols="58" rows="10"></textarea>
+                                </div>
+                                <div>
+                                    <input type="hidden" id="q_id" value="{$question.q_id}">
+                                    <input class="btn" name="submit" type="submit" id="submit"  value="提交回答">
+                                </div>
+                            </form>
+                        </if>
                     </div>
 
                 </section><!-- end of comments -->
@@ -204,7 +178,25 @@
         }).then(function () {
             
         })
-    })
+    });
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $.ajax({
+            type: "POST",
+            url: "__URL__/answerQuestion",
+            data: {
+                'q_id': $('#q_id').val(),
+                'answer': $('#answer').val()
+            },
+            dataType: "json",
+        }).then(function (data) {
+            if(data.code === 1){
+                alert('success');
+            }
+        })
+
+    });
 </script>
 </body>
 </html>

@@ -30,16 +30,16 @@ CREATE TABLE IF NOT EXISTS `answer` (
 DELIMITER //
 CREATE TRIGGER `a_num_delete` AFTER DELETE ON `answer`
  FOR EACH ROW begin
-update user set a_num = a_num - 1 where answer.user_id = user.user_id;
-update question set a_num = a_num - 1 where answer.user_id = user.user_id;
+update user set a_num = a_num - 1 where user_id = old.user_id;
+update question set a_num = a_num - 1 where user_id = old.user_id;
 end
 //
 DELIMITER ;
 DELIMITER //
 CREATE TRIGGER `a_num_insert` AFTER INSERT ON `answer`
  FOR EACH ROW begin
-update user set a_num = a_num + 1 where answer.user_id = user.user_id;
-update question set a_num = a_num + 1 where answer.user_id = user.user_id;
+update `user` set a_num = a_num + 1 where user_id = new.user_id;
+update question set a_num = a_num + 1 where user_id = new.user_id;
 end
 //
 DELIMITER ;
@@ -66,12 +66,12 @@ CREATE TABLE IF NOT EXISTS `question` (
 --
 DELIMITER //
 CREATE TRIGGER `q_num_delete` AFTER DELETE ON `question`
- FOR EACH ROW update user set q_num = q_num - 1 where question.user_id = user.user_id
+ FOR EACH ROW update user set q_num = q_num - 1 where user_id = old.user_id
 //
 DELIMITER ;
 DELIMITER //
 CREATE TRIGGER `q_num_insert` AFTER INSERT ON `question`
- FOR EACH ROW update user set q_num = q_num + 1 where question.user_id = user.user_id
+ FOR EACH ROW update user set q_num = q_num + 1 where user_id = new.user_id
 //
 DELIMITER ;
 

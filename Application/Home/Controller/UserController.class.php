@@ -50,7 +50,8 @@ class UserController extends Controller {
             $user = new UserService();
             $result = $user->login($data);
             if($result) {
-                $_SESSION["user"]=$data['user_name'];
+                session('user.user_name', $result['user_name']);
+                session('user.user_id', $result['user_id']);
                 $this->redirect('Index/index');
             }
             else {
@@ -65,7 +66,7 @@ class UserController extends Controller {
     }
     
     public function logout() {
-        $_SESSION["user"]=NULL;
+        session(null);
         $this->redirect('Index/index');
     }
     

@@ -62,9 +62,16 @@
             </nav>
 
             <div class="login">
-                <a href="<?php echo U('User/login');?>">登录</a>
-                |
-                <a href="<?php echo U('User/register');?>">注册</a>
+                <?php if(session('user.user_name') != ''): ?><a href=""><?php echo session('user.user_name');?></a>
+                    |
+                    <a href="/qasystem/index.php/Home/User/logout">注销</a>
+                <?php else: ?>
+                    <a href="<?php echo U('User/login');?>">登录</a>
+                    |
+                    <a href="<?php echo U('User/register');?>">注册</a><?php endif; ?>
+
+
+
             </div>
             <!-- End of Main Navigation -->
 

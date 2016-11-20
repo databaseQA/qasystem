@@ -78,5 +78,10 @@ class QuestionService{
         $answerDb = new AnswerModel();
         $answerDb->where($map)->setInc('yesVote');
     }
+    
+    public function answerQuestion($data){
+        $answerDb = new AnswerModel();
+        return $answerDb->add($data);
+    }
 
 }
