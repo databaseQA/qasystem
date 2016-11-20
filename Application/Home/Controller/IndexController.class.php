@@ -17,7 +17,8 @@ class IndexController extends Controller {
 
         $title = array('最热提问','最新提问');
         $this->assign('title', $title);
-
+        $this->assign('hotQuestion', $this->getHotQuestion());
+        $this->assign('newQuestion', $this->getNewQuestion());
         $this->display();
     }
     public function getQuestionType(){
@@ -34,7 +35,17 @@ class IndexController extends Controller {
             $this->assign('questions',$questionList);
             $this->display('questionList');
         }
+    }
+    
+    private function getHotQuestion(){
+        $service = new IndexService();
+        $hotQuestion = $service->getHotQuestion();
+        return $hotQuestion;
+    }
 
-
+    private function getNewQuestion(){
+        $service = new IndexService();
+        $newQuestions = $service->getNewQuestion();
+        return $newQuestions;
     }
 }

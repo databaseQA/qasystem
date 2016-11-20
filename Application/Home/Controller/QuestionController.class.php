@@ -63,4 +63,16 @@ class QuestionController extends Controller {
             }
         }
     }
+//    得到问题的详细内容
+    public function getQuestion(){
+        $id = $_GET['id'];
+        if($id){
+            $service = new QuestionService();
+            $service->getQuestion($id);
+        }else{
+            return false;
+        }
+
+
+    }
 }

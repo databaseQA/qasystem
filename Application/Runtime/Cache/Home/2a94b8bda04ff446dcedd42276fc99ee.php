@@ -113,36 +113,18 @@
                                                                     <?php echo ($title[0]); ?>
                                                                 </h3>
                                                                 <ul class="articles">
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
-                                                                                <span class="article-meta">25 Feb, 2013 in <a href="#" title="View all posts in Server &amp; Database">Server &amp; Database</a></span>
-                                                                                <span class="like-count">66</span>
-                                                                        </li>
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">WordPress Site Maintenance</a></h4>
-                                                                                <span class="article-meta">24 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                                <span class="like-count">15</span>
-                                                                        </li>
-                                                                        <li class="article-entry video">
-                                                                                <h4><a href="single.html">Meta Tags in WordPress</a></h4>
-                                                                                <span class="article-meta">23 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                                <span class="like-count">8</span>
-                                                                        </li>
-                                                                        <li class="article-entry image">
-                                                                                <h4><a href="single.html">WordPress in Your Language</a></h4>
-                                                                                <span class="article-meta">22 Feb, 2013 in <a href="#" title="View all posts in Advanced Techniques">Advanced Techniques</a></span>
-                                                                                <span class="like-count">6</span>
-                                                                        </li>
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">Know Your Sources</a></h4>
-                                                                                <span class="article-meta">22 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                                <span class="like-count">2</span>
-                                                                        </li>
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">Validating a Website</a></h4>
-                                                                                <span class="article-meta">21 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                                <span class="like-count">3</span>
-                                                                        </li>
+                                                                        <?php if(is_array($hotQuestion)): $i = 0; $__LIST__ = $hotQuestion;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$question): $mod = ($i % 2 );++$i;?><li class="article-entry standard">
+                                                                                        <h4><a href="/qasystem/index.php/Home/Question/getQuestion?id=<?php echo ($question["q_id"]); ?>"><?php echo ($question["q_id"]); ?></a></h4>
+                                                                                        <span class="article-meta"><?php echo ($question["q_time"]); ?> By <?php echo ($question["user_name"]); ?></span>
+                                                                                        <span class="like-count"><?php echo ($question["a_num"]); ?></span>
+                                                                                </li><?php endforeach; endif; else: echo "" ;endif; ?>
+
+                                                                        <!--<li class="article-entry standard">-->
+                                                                                <!--<h4><a href="single.html">WordPress Site Maintenance</a></h4>-->
+                                                                                <!--<span class="article-meta">24 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>-->
+                                                                                <!--<span class="like-count">15</span>-->
+                                                                        <!--</li>-->
+
                                                                 </ul>
                                                         </section>
 
@@ -150,36 +132,12 @@
                                                         <section class="span4 articles-list">
                                                                 <h3><?php echo ($title[1]); ?></h3>
                                                                 <ul class="articles">
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
-                                                                                <span class="article-meta">25 Feb, 2013 in <a href="#" title="View all posts in Server &amp; Database">Server &amp; Database</a></span>
-                                                                                <span class="like-count">66</span>
-                                                                        </li>
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">Using Javascript</a></h4>
-                                                                                <span class="article-meta">25 Feb, 2013 in <a href="#" title="View all posts in Advanced Techniques">Advanced Techniques</a></span>
-                                                                                <span class="like-count">18</span>
-                                                                        </li>
-                                                                        <li class="article-entry image">
-                                                                                <h4><a href="single.html">Using Images</a></h4>
-                                                                                <span class="article-meta">25 Feb, 2013 in <a href="#" title="View all posts in Designing in WordPress">Designing in WordPress</a></span>
-                                                                                <span class="like-count">7</span>
-                                                                        </li>
-                                                                        <li class="article-entry video">
-                                                                                <h4><a href="single.html">Using Video</a></h4>
-                                                                                <span class="article-meta">24 Feb, 2013 in <a href="#" title="View all posts in WordPress Plugins">WordPress Plugins</a></span>
-                                                                                <span class="like-count">7</span>
-                                                                        </li>
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">WordPress Site Maintenance</a></h4>
-                                                                                <span class="article-meta">24 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                                <span class="like-count">15</span>
-                                                                        </li>
-                                                                        <li class="article-entry standard">
-                                                                                <h4><a href="single.html">WordPress CSS Information and Techniques</a></h4>
-                                                                                <span class="article-meta">24 Feb, 2013 in <a href="#" title="View all posts in Theme Development">Theme Development</a></span>
-                                                                                <span class="like-count">1</span>
-                                                                        </li>
+                                                                        <?php if(is_array($newQuestion)): $i = 0; $__LIST__ = $newQuestion;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$question): $mod = ($i % 2 );++$i;?><li class="article-entry standard">
+                                                                                        <h4><a href="/qasystem/index.php/Home/Question/getQuestion?id=<?php echo ($question["q_id"]); ?>"><?php echo ($question["q_id"]); ?></a></h4>
+                                                                                        <span class="article-meta"><?php echo ($question["q_time"]); ?> By <?php echo ($question["user_name"]); ?></span>
+                                                                                        <span class="like-count"><?php echo ($question["a_num"]); ?></span>
+                                                                                </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                                                                       
                                                                 </ul>
                                                         </section>
                                                 </div>

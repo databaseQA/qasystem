@@ -23,4 +23,22 @@ class IndexService{
             ->join('user on user.user_id = question.user_id')
             ->select();
     }
+    function getHotQuestion(){
+        $questionDb = new QuestionModel();
+        return $questionDb
+            ->field('q_id,q_title,q_time,user_name,question.a_num')
+            ->order('question.a_num desc')
+            ->limit(0,5)
+            ->join("user ON user.user_id = question.user_id")
+            ->select();
+    }
+    function getNewQuestion(){
+        $questionDb = new QuestionModel();
+        return $questionDb
+            ->field('q_id,q_title,q_time,question.a_num,user_name')
+            ->order('question.q_time desc')
+            ->limit(0,5)
+            ->join("user ON user.user_id = question.user_id")
+            ->select();
+    }
 }

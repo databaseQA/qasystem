@@ -4,11 +4,10 @@ return array(
     'URL_PARAMS_BIND_TYPE' => 0,
     'DB_HOST' => 'localhost',
     'DB_USER' => 'root',
-//    'DB_PWD' => 'ali',
-    'DB_PWD' => '',
+    'DB_PWD' => 'ali',
     'DB_PREFIX' => '',                      // 数据库表前缀
     'DB_NAME' => 'qasystem',
-//    'SHOW_PAGE_TRACE' => true,
+    'SHOW_PAGE_TRACE' => true,
 //    'MODULE_ALLOW_LIST' => array('Home'),
 //    'DEFAULT_MODULE' => 'Home',             // 默认模块
 //    'URL_ROUTER_ON' => true,
