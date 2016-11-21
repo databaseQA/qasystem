@@ -98,7 +98,7 @@
             <p class="search-tag-line">有疑问？先搜索一下再提问吧！</p>
 
             <form id="search-form" class="search-form clearfix" method="get" action="/qasystem/index.php/Home/Index/searchQuestion" autocomplete="off">
-                <input class="search-term required" type="text" id="s" name="key" placeholder="请在这里输入你的问题" />
+                <input class="search-term" type="text" id="s" name="key" placeholder="请在这里输入你的问题" />
                 <input class="search-btn" type="submit" value="搜索" />
                 <div id="search-error-container"></div>
             </form>
@@ -121,7 +121,7 @@
                                                                 </h3>
                                                                 <ul class="articles">
                                                                         <?php if(is_array($hotQuestion)): $i = 0; $__LIST__ = $hotQuestion;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$question): $mod = ($i % 2 );++$i;?><li class="article-entry standard">
-                                                                                        <h4><a href="/qasystem/index.php/Home/Question/getQuestion?id=<?php echo ($question["q_id"]); ?>"><?php echo ($question["q_title"]); ?></a></h4>
+                                                                                        <h4><a href="/qasystem/index.php/Home/Question/getQuestion?id=<?php echo ($question["q_id"]); ?>"><?php echo ($question["q_id"]); ?></a></h4>
                                                                                         <span class="article-meta"><?php echo ($question["q_time"]); ?> By <?php echo ($question["user_name"]); ?></span>
                                                                                         <span class="like-count"><?php echo ($question["a_num"]); ?></span>
                                                                                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -140,7 +140,7 @@
                                                                 <h3><?php echo ($title[1]); ?></h3>
                                                                 <ul class="articles">
                                                                         <?php if(is_array($newQuestion)): $i = 0; $__LIST__ = $newQuestion;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$question): $mod = ($i % 2 );++$i;?><li class="article-entry standard">
-                                                                                        <h4><a href="/qasystem/index.php/Home/Question/getQuestion?id=<?php echo ($question["q_id"]); ?>"><?php echo ($question["q_title"]); ?></a></h4>
+                                                                                        <h4><a href="/qasystem/index.php/Home/Question/getQuestion?id=<?php echo ($question["q_id"]); ?>"><?php echo ($question["q_id"]); ?></a></h4>
                                                                                         <span class="article-meta"><?php echo ($question["q_time"]); ?> By <?php echo ($question["user_name"]); ?></span>
                                                                                         <span class="like-count"><?php echo ($question["a_num"]); ?></span>
                                                                                 </li><?php endforeach; endif; else: echo "" ;endif; ?>

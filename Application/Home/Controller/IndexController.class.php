@@ -27,30 +27,33 @@ class IndexController extends Controller {
         $this->assign('type', $questionType);
     }
     public function searchQuestion(){
-        $key = $_GET['key'];
 
-        if(!empty($key)) {
-            $arr = array(
-                'q_title' => $key,
-                'q_content' => $key
-            );
-            
-            $this->assign('title', '搜索结果');
-            $service = new IndexService();
-            
-            
-            //得到记录总条数
-            $count = $service->getNum($arr);
-            $num = 1;//定义每一页条数
-            $pageArray = page($count,$num);
-            //分页后的用户表
-            $questionList = $service->getQuestionList($arr, $pageArray['perPage'], $pageArray['nextPage']);
-
-            $this->assign('questions',$questionList);
-//            var_dump($questionList);
-            $this->assign('page', $pageArray['page']);
-            $this->display('questionList');
+        if(!empty($_GET['key'])){
+            $key = $_GET['key'];
+        }else{
+            $key = '';
         }
+        $arr = array(
+            'q_title' => $key,
+            'q_content' => $key
+        );
+
+        $this->assign('title', '搜索结果');
+        $service = new IndexService();
+
+
+        //得到记录总条数
+        $count = $service->getNum($arr);
+        $num = 1;//定义每一页条数
+        $pageArray = page($count,$num);
+        //分页后的用户表
+        $questionList = $service->getQuestionList($arr, $pageArray['perPage'], $pageArray['nextPage']);
+
+        $this->assign('questions',$questionList);
+        $this->assign('page', $pageArray['page']);
+        $this->assign('keyword', $key);
+        $this->display('questionList');
+
     }
     
     private function getHotQuestion(){
