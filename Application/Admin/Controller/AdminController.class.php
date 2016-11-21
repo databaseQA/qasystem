@@ -13,17 +13,20 @@ class AdminController extends Controller {
         $this->display();
     }
     public function login(){
+        $this->display();
+    }
+    public function doLogin(){
         if(IS_POST){
             $data = array(
-                "admin_name" => $_POST['username'],
+                "admin_name" => $_POST['name'],
                 "admin_pwd" => $_POST['password']
             );
             $service = new AdminService();
             $re = $service->login($data);
-            var_dump($_POST);
             if($re){
-                session('admin', $re);
-                $this->redirect('Index/index');
+                session('admin.name', $re['admin_name']);
+                session('admin.id', $re['admin_id']);
+                $this->redirect('Admin/index');
             }
         }else{
             echo "非法请求";
@@ -37,10 +40,11 @@ class AdminController extends Controller {
     public function getAdminDetail(){
         checkAdminLogin();
         $service = new AdminService();
-        $adminDetial = $service->getAdminDetail(session('admin')['admin_name']);
-        if($adminDetial){
-            $this->ajaxReturn($adminDetial);
+        $adminDetail = $service->getAdminDetail(session('admin.id'));
+        if($adminDetail){
+            $this->assign('adminDetail', $adminDetail);
         }
+        $this->display('info');
     }
 
     public function modify(){
@@ -51,18 +55,30 @@ class AdminController extends Controller {
             if(isset($_POST['old_password']) && !empty($_POST['old_password'])){
                 $data = array(
                     'admin_pwd' => $_POST['old_password'],
-                    'admin_name' => session('admin')['admin_name']
+                    'admin_id' => session('admin.id')
                 );
                 $re = $this->checkPwd($data);
                 if(!$re){
                     echo "原始密码错误";
                     return;
                 }
+
+                $data = array(
+                    'admin_pwd' => $_POST['password'],
+                    'admin_email' => $_POST['email'],
+                );
+            }else{
+                $data = array(
+                    'admin_email' => $_POST['email'],
+                );
             }
+
             //修改信息
-            $re = $service->modify(session('admin')['admin_id'], $_POST['data']);
+            $re = $service->modify(session('admin.id'), $data);
             if(!$re){
                 echo "修改信息失败";
+            }else{
+                echo "修改信息成功";
             }
         }
     }
@@ -75,5 +91,7 @@ class AdminController extends Controller {
             return false;
         }
     }
+    
+
 
 }

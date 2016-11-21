@@ -47,14 +47,14 @@ function page($count,$num){
     return $array;
 }
 function checkAdminLogin(){
-    if(session('admin')['admin_name'] == null){
-        $this->redirect('Index/index');
+    if(session('admin.id') == null){
+        redirect(U('Admin/login'));
     }
 }
 function checkUserLogin() {
     if(session('user.user_id') == NULL) {
         echo "<script>alert('请先登录！')</script>";
-        redirect('User/login');
+        redirect(U('User/login'));
     }
 }
 //把搜索筛选的信息封装
