@@ -63,5 +63,6 @@ function searchLike($arr){
     foreach($arr as $key => $value){
         $map[$key] = array('like','%'.$value.'%');
     }
+    $map['_logic'] = 'or';
     return $map;
 }

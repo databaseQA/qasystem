@@ -23,7 +23,7 @@
         <div class="container">
             <div class="logo-container">
                 <!-- Website Logo -->
-                <a href="/qasystem/index.php/Home/User"  title="KnowledgeBase">
+                <a href="/qasystem/index.php/Home/Index"  title="KnowledgeBase">
                     <img src="/qasystem/Public/images/logo.png" alt="KnowledgeBase">
                 </a>
                 <!--<span class="tag-line">Premium WordPress Theme</span>-->

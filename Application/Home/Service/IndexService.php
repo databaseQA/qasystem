@@ -12,16 +12,36 @@ class IndexService{
         $typeDb = new TypeModel();
         return $typeDb->select();
     }
-    function search($key){
+    function getQuestionList($arr = array(), $page = '', $perPage = ''){
+
         $questionDb = new QuestionModel();
-        $map['q_title'] = array('like', '%'.$key.'%');
-        $map['q_content'] = array('like', '%'.$key.'%');
-        $map['_logic'] = 'or';
+        if(count($arr) != 0){
+            $re = $questionDb
+                ->field('question.q_id,question.q_title,question.q_time,question.a_num,user.user_nickname')
+                ->where(searchLike($arr))
+                ->limit($page.','.$perPage)
+                ->join('user on user.user_id = question.user_id')
+                ->order('a_num desc, q_time desc')
+                ->select();
+        }else{
+            $re = $questionDb
+                ->field('question.q_id,question.q_title,question.q_time,question.a_num,user.user_nickname')
+                ->limit($page.','.$perPage)
+                ->join('user on user.user_id = question.user_id')
+                ->order('a_num desc, q_time desc')
+                ->select();
+        }
+        if($re){
+            return $re;
+        }else{
+            return false;
+        }
+    }
+    function getNum($arr){
+        $questionDb = new QuestionModel();
         return $questionDb
-            ->field('question.q_id,question.q_title,question.q_time,question.a_num,user.user_nickname')
-            ->where($map)
-            ->join('user on user.user_id = question.user_id')
-            ->select();
+            ->where(searchLike($arr))
+            ->count('q_id');
     }
     function getHotQuestion(){
         $questionDb = new QuestionModel();

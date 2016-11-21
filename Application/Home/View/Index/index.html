@@ -61,7 +61,7 @@
                                                                 <ul class="articles">
                                                                         <volist name="hotQuestion" id="question">
                                                                                 <li class="article-entry standard">
-                                                                                        <h4><a href="__MODULE__/Question/getQuestion?id={$question.q_id}">{$question.q_id}</a></h4>
+                                                                                        <h4><a href="__MODULE__/Question/getQuestion?id={$question.q_id}">{$question.q_title}</a></h4>
                                                                                         <span class="article-meta">{$question.q_time} By {$question.user_name}</span>
                                                                                         <span class="like-count">{$question.a_num}</span>
                                                                                 </li>
@@ -82,7 +82,7 @@
                                                                 <ul class="articles">
                                                                         <volist name="newQuestion" id="question">
                                                                                 <li class="article-entry standard">
-                                                                                        <h4><a href="__MODULE__/Question/getQuestion?id={$question.q_id}">{$question.q_id}</a></h4>
+                                                                                        <h4><a href="__MODULE__/Question/getQuestion?id={$question.q_id}">{$question.q_title}</a></h4>
                                                                                         <span class="article-meta">{$question.q_time} By {$question.user_name}</span>
                                                                                         <span class="like-count">{$question.a_num}</span>
                                                                                 </li>

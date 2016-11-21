@@ -29,7 +29,20 @@
 
 <body>
 <include file="Public:header"/>
+<!-- Start of Search Wrapper -->
+<div class="search-area-wrapper">
+    <div class="search-area container">
+        <h3 class="search-header">我有疑问！</h3>
+        <p class="search-tag-line">有疑问？先搜索一下再提问吧！</p>
 
+        <form id="search-form" class="search-form clearfix" method="get" action="__URL__/searchQuestion" autocomplete="off">
+            <input class="search-term required" type="text" id="s" name="key" placeholder="请在这里输入你的问题" value={$_GET['key']} />
+            <input class="search-btn" type="submit" value="搜索" />
+            <!--<div id="search-error-container"></div>-->
+        </form>
+    </div>
+</div>
+<!-- End of Search Wrapper -->
 <!-- Start of Page Container -->
 <div class="page-container">
     <div class="container">
@@ -46,17 +59,15 @@
                         <ul class="articles">
                             <volist name="questions" id="question">
                                 <li class="article-entry standard">
-                                    <h4><a href="__MODULE__/getQuestion?id={$question.q_id}">{$question.q_title}</a></h4>
+                                    <h4><a href="__MODULE__/Question/getQuestion?id={$question.q_id}">{$question.q_title}</a></h4>
                                     <span class="article-meta">{$question.q_time}<a href="#" style="padding-left: 20px">{$question.user_nickname}</a></span>
                                     <span class="like-count">{$question.a_num}</span>
                                 </li>
                             </volist>
                         </ul>
                     </section>
-
-
-
                 </div>
+                <div>{$page}</div>
             </div>
             <!-- end of page content -->
 
