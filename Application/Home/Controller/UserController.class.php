@@ -13,7 +13,26 @@ class UserController extends Controller {
     }
     
     public function index() {
+        //checkUserLogin();
+        //$this->assign('name', "23");
+        //$this->assign('nickname', "233");
+        //$this->assign('gender', "M");
+        //$this->assign('email', "23333");
+        //$this->assign('intro', "233333");
+        /*
         checkUserLogin();
+        $user = new UserService();
+        $result = $user->getUserDetail(session('user')['user_id']);
+        if($result) {
+            //$this->ajaxReturn($result);
+            $this->assign('nickname', $result['user_nickname']);
+            $this->assign('gender', $result['user_gender']);
+            $this->assign('email', $result['user_email']);
+            $this->assign('intro', $result['user_intro']);
+        }
+        */
+        
+        $this->assign('data', $this->getUserDetail());
         $this->display();
     }
     
@@ -82,7 +101,8 @@ class UserController extends Controller {
         $user = new UserService();
         $result = $user->getUserDetail(session('user')['user_id']);
         if($result) {
-            $this->ajaxReturn($result);
+            //$this->ajaxReturn($result);
+            return $result;
         }
     }
     
