@@ -12,6 +12,11 @@ class UserController extends Controller {
         header("Content-Type: text/html; charset=utf-8");
     }
     
+    public function index() {
+        checkUserLogin();
+        $this->display();
+    }
+    
     public function register(){
         $this->display();
     }
@@ -27,12 +32,14 @@ class UserController extends Controller {
         $user = new UserService();
         $result = $user->register($data);
         if($result) {
-            $_SESSION["user"]=$data['user_name'];
+            session('user.user_name', $result['user_name']);
+            session('user.user_id', $result['user_id']);
+            //$_SESSION["user"]=$data['user_name'];
             echo "<script>alert('注册成功！')</script>";
             $this->redirect('Index/index');
         }
         else {
-            echo "<script>alert('注册失败！')</script>";
+            //echo "<script>alert('注册失败！')</script>";
             $this->redirect('User/register');
         }
     }
@@ -95,7 +102,7 @@ class UserController extends Controller {
         $result = $user->modify(session('user')['user_id'], $data);
         if($result) {
             echo "<script>alert('修改资料成功！')</script>";
-            $this->display();
+            $this->redirect('Index/index');
         }
         else {
             echo "<script>alert('修改资料失败！')</script>";

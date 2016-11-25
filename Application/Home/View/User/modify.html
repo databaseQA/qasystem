@@ -46,7 +46,7 @@
                                                 </article>
 
 
-                                                <form id="contact-form" class="row" action="__URL__/askQuestion" method="post">
+                                                <form id="contact-form" class="row" action="__URL__/doModify" method="post">
 
                                                         <div class="span2">
                                                                 <label for="name">昵称</label>
@@ -59,7 +59,10 @@
                                                                 <label for="name">性别</label>
                                                         </div>
                                                         <div class="span6">
-                                                                <input type="text" name="gender" id="gender" class="required input-xlarge" value="" title="">
+                                                                <input type="radio" name="gender" id="gender" class="required input-xlarge" value="M" title="" style="height:40px; margin-top:-0px; margin-bottom:5px">
+                                                                <font style="margin-right:120px">男</font>
+                                                                <input type="radio" name="gender" id="gender" class="required input-xlarge" value="F" title="" style="height:40px; margin-top:-0px; margin-bottom:5px">
+                                                                <font style="margin-right:120px">女</font>
                                                         </div>
                                                     
                                                         <div class="span2">

@@ -46,9 +46,9 @@
 
             <div class="login">
                 <if condition="session('user.user_name') neq ''">
-                    <a href="">{:session('user.user_name')}</a>
+                    <a href="__MODULE__/User/index">{:session('user.user_name')}</a>
                     |
-                    <a href="__MODULE__/User/logout">注销</a>
+                    <a href="__MODULE__/User/logout">退出登录</a>
                 <else/>
                     <a href="{:U('User/login')}">登录</a>
                     |

@@ -97,9 +97,9 @@
         <p class="search-tag-line">有疑问？先搜索一下再提问吧！</p>
 
         <form id="search-form" class="search-form clearfix" method="get" action="/qasystem/index.php/Home/Index/searchQuestion" autocomplete="off">
-
-                <input class="search-term" type="text" id="s" name="key" placeholder="请在这里输入你的问题" value=<?php echo ($keyword); ?> />
-
+            <?php if($keyword != ''): ?><input class="search-term" type="text" id="s" name="key" placeholder="请在这里输入你的问题" value=<?php echo ($keyword); ?> />
+                <?php else: ?>
+                <input class="search-term" type="text" id="s" name="key" placeholder="请在这里输入你的问题" /><?php endif; ?>
 
             <input class="search-btn" type="submit" value="搜索" />
             <!--<div id="search-error-container"></div>-->

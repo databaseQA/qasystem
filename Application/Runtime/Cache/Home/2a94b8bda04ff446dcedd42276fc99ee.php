@@ -73,9 +73,9 @@
             </nav>
 
             <div class="login">
-                <?php if(session('user.user_name') != ''): ?><a href=""><?php echo session('user.user_name');?></a>
+                <?php if(session('user.user_name') != ''): ?><a href="/qasystem/index.php/Home/User/index"><?php echo session('user.user_name');?></a>
                     |
-                    <a href="/qasystem/index.php/Home/User/logout">注销</a>
+                    <a href="/qasystem/index.php/Home/User/logout">退出登录</a>
                 <?php else: ?>
                     <a href="<?php echo U('User/login');?>">登录</a>
                     |

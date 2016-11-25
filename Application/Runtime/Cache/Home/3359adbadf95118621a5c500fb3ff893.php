@@ -23,7 +23,7 @@
         <div class="container">
             <div class="logo-container">
                 <!-- Website Logo -->
-                <a href="/qasystem/index.php/Home/User"  title="KnowledgeBase">
+                <a href="/qasystem/index.php/Home/Index"  title="KnowledgeBase">
                     <img src="/qasystem/Public/images/logo.png" alt="KnowledgeBase">
                 </a>
                 <!--<span class="tag-line">Premium WordPress Theme</span>-->
@@ -37,7 +37,7 @@
                         <!--<li><a href="home-categories-articles.html">Home 3</a></li>-->
                         <!--<li><a href="articles-list.html">Articles List</a></li>-->
                         <!--<li><a href="faq.html">FAQs</a></li>-->
-                        <li><a href="<?php echo U('Question/askQuestion');?>">提问</a>
+                        <li><a href="<?php echo U('Question/index');?>">提问</a>
                             <ul class="sub-menu">
                                 <?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$questionType): $mod = ($i % 2 );++$i;?><li><a href="/qasystem/index.php/Home/Question?type=<?php echo ($questionType["type_id"]); ?>"><?php echo ($questionType["type_name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                                 
@@ -62,9 +62,16 @@
             </nav>
 
             <div class="login">
-                <a href="<?php echo U('User/login');?>">登录</a>
-                |
-                <a href="<?php echo U('User/register');?>">注册</a>
+                <?php if(session('user.user_name') != ''): ?><a href="/qasystem/index.php/Home/User/index"><?php echo session('user.user_name');?></a>
+                    |
+                    <a href="/qasystem/index.php/Home/User/logout">退出登录</a>
+                <?php else: ?>
+                    <a href="<?php echo U('User/login');?>">登录</a>
+                    |
+                    <a href="<?php echo U('User/register');?>">注册</a><?php endif; ?>
+
+
+
             </div>
             <!-- End of Main Navigation -->
 
