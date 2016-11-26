@@ -13,25 +13,6 @@ class UserController extends Controller {
     }
     
     public function index() {
-        //checkUserLogin();
-        //$this->assign('name', "23");
-        //$this->assign('nickname', "233");
-        //$this->assign('gender', "M");
-        //$this->assign('email', "23333");
-        //$this->assign('intro', "233333");
-        /*
-        checkUserLogin();
-        $user = new UserService();
-        $result = $user->getUserDetail(session('user')['user_id']);
-        if($result) {
-            //$this->ajaxReturn($result);
-            $this->assign('nickname', $result['user_nickname']);
-            $this->assign('gender', $result['user_gender']);
-            $this->assign('email', $result['user_email']);
-            $this->assign('intro', $result['user_intro']);
-        }
-        */
-        
         $this->assign('data', $this->getUserDetail());
         $this->display();
     }
@@ -132,6 +113,10 @@ class UserController extends Controller {
     
     public function modifyPwd() {
         checkUserLogin();
+        $this->display();
+    }
+    
+    public function doModifyPwd() {
         $oldPwd = $_POST['old_pwd'];
         $newPwd = $_POST['new_Pwd1'];
         if($oldPwd == session('user')['user_pwd']) {

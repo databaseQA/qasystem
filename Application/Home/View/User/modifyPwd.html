@@ -40,56 +40,38 @@
 
                                                 <article class="type-page hentry clearfix">
                                                         <h1 class="post-title">
-                                                                我的个人信息
+                                                                修改个人信息
                                                         </h1>
                                                         <hr>
                                                 </article>
 
 
-                                                <form id="contact-form" class="row" action="" method="post">
+                                                <form id="contact-form" class="row" action="__URL__/doModifyPwd" method="post">
 
                                                         <div class="span2">
-                                                                <label for="name">用户名</label>
+                                                                <label for="name">原始密码</label>
                                                         </div>
-                                                        <div class="span6" style="height:40px">
-                                                                {:session('user.user_name')}
-                                                        </div>
-                                                        
-                                                        <div class="span2">
-                                                                <label for="name">昵称</label>
-                                                        </div>
-                                                        <div class="span6" style="height:40px">
-                                                                {$data.user_nickname}
+                                                        <div class="span6">
+                                                                <input type="password" name="old_pwd" id="old_pwd" class="required input-xlarge" value="" title="">
                                                         </div>
                                                     
                                                         <div class="span2">
-                                                                <label for="name">性别</label>
+                                                                <label for="name">新密码</label>
                                                         </div>
-                                                        <div class="span6" style="height:40px">
-                                                                {$data.user_gender}
-                                                                <input type="radio" name="gender" id="gender" class="required input-xlarge" value="M" title="" style="height:40px; margin-top:-0px; margin-bottom:5px">
-                                                                <font style="margin-right:120px">男</font>
-                                                                <input type="radio" name="gender" id="gender" class="required input-xlarge" value="F" title="" style="height:40px; margin-top:-0px; margin-bottom:5px">
-                                                                <font style="margin-right:120px">女</font>
+                                                        <div class="span6">
+                                                                <input type="password" name="new_Pwd1" id="new_Pwd1" class="required input-xlarge" value="" title="">
                                                         </div>
                                                     
                                                         <div class="span2">
-                                                                <label for="name">邮箱</label>
+                                                                <label for="name">确认新密码</label>
                                                         </div>
-                                                        <div class="span6" style="height:40px">
-                                                                {$data.user_email}
-                                                        </div>
-
-                                                        <div class="span2">
-                                                                <label for="message">个人简介</label>
-                                                        </div>
-                                                        <div class="span6" style="height:40px">
-                                                                {$data.user_intro}
+                                                        <div class="span6">
+                                                                <input type="password" name="new_Pwd2" id="new_Pwd2" class="required input-xlarge" value="" title="">
                                                         </div>
 
                                                         <div class="span6 offset2 bm30">
-                                                                <input type="button" onClick="javascrtpt:window.location.href='__MODULE__/User/modify'" name="modify" value="修改个人信息" class="btn btn-inverse">
-                                                                <input type="button" onClick="javascrtpt:window.location.href='__MODULE__/User/modifyPwd'" name="modify" value="修改密码" class="btn btn-inverse">
+                                                                <input type="submit" name="submit" value="修改" class="btn btn-inverse">
+                                                                <img src="__PUBLIC__/images/loading.gif" id="contact-loader" alt="Loading...">
                                                         </div>
 
                                                         <div class="span6 offset2 error-container"></div>
@@ -122,4 +104,3 @@
 
         </body>
 </html>
-

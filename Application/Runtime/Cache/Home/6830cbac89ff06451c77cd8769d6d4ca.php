@@ -107,7 +107,7 @@
                                                 </article>
 
 
-                                                <form id="contact-form" class="row" action="/qasystem/index.php/Home/User/doModify" method="post">
+                                                <form id="contact-form" class="row" action="" method="post">
 
                                                         <div class="span2">
                                                                 <label for="name">用户名</label>
@@ -149,8 +149,8 @@
                                                         </div>
 
                                                         <div class="span6 offset2 bm30">
-                                                                <input type="submit" name="submit" value="修改" class="btn btn-inverse">
-                                                                <img src="/qasystem/Public/images/loading.gif" id="contact-loader" alt="Loading...">
+                                                                <input type="button" onClick="javascrtpt:window.location.href='/qasystem/index.php/Home/User/modify'" name="modify" value="修改个人信息" class="btn btn-inverse">
+                                                                <input type="button" onClick="javascrtpt:window.location.href='/qasystem/index.php/Home/User/modifyPwd'" name="modify" value="修改密码" class="btn btn-inverse">
                                                         </div>
 
                                                         <div class="span6 offset2 error-container"></div>
