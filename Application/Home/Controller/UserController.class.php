@@ -24,22 +24,16 @@ class UserController extends Controller {
     public function doRegister() {
         $data = array(
             "user_name" => $_POST['username'],
-            "user_pwd" => $_POST['password'],
-            //"user_nickname" => $_POST['nickname'],
-            //"user_gender" => $_POST['gender'],
-            //"user_email" => $_POST['email']
+            "user_pwd" => $_POST['password']
         );
         $user = new UserService();
         $result = $user->register($data);
         if($result) {
             session('user.user_name', $result['user_name']);
             session('user.user_id', $result['user_id']);
-            //$_SESSION["user"]=$data['user_name'];
-            echo "<script>alert('注册成功！')</script>";
             $this->redirect('Index/index');
         }
         else {
-            //echo "<script>alert('注册失败！')</script>";
             $this->redirect('User/register');
         }
     }
