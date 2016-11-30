@@ -12,6 +12,11 @@ class UserController extends Controller {
         header("Content-Type: text/html; charset=utf-8");
     }
     
+    public function index() {
+        $this->assign('data', $this->getUserDetail());
+        $this->display();
+    }
+    
     public function register(){
         $this->display();
     }
@@ -19,20 +24,16 @@ class UserController extends Controller {
     public function doRegister() {
         $data = array(
             "user_name" => $_POST['username'],
-            "user_pwd" => $_POST['password'],
-            //"user_nickname" => $_POST['nickname'],
-            //"user_gender" => $_POST['gender'],
-            //"user_email" => $_POST['email']
+            "user_pwd" => $_POST['password']
         );
         $user = new UserService();
         $result = $user->register($data);
         if($result) {
-            $_SESSION["user"]=$data['user_name'];
-            echo "<script>alert('注册成功！')</script>";
+            session('user.user_name', $result['user_name']);
+            session('user.user_id', $result['user_id']);
             $this->redirect('Index/index');
         }
         else {
-            echo "<script>alert('注册失败！')</script>";
             $this->redirect('User/register');
         }
     }
@@ -75,7 +76,8 @@ class UserController extends Controller {
         $user = new UserService();
         $result = $user->getUserDetail(session('user')['user_id']);
         if($result) {
-            $this->ajaxReturn($result);
+            //$this->ajaxReturn($result);
+            return $result;
         }
     }
     
@@ -95,7 +97,7 @@ class UserController extends Controller {
         $result = $user->modify(session('user')['user_id'], $data);
         if($result) {
             echo "<script>alert('修改资料成功！')</script>";
-            $this->display();
+            $this->redirect('Index/index');
         }
         else {
             echo "<script>alert('修改资料失败！')</script>";
@@ -105,6 +107,10 @@ class UserController extends Controller {
     
     public function modifyPwd() {
         checkUserLogin();
+        $this->display();
+    }
+    
+    public function doModifyPwd() {
         $oldPwd = $_POST['old_pwd'];
         $newPwd = $_POST['new_Pwd1'];
         if($oldPwd == session('user')['user_pwd']) {

@@ -67,4 +67,9 @@ class IndexController extends Controller {
         $newQuestions = $service->getNewQuestion();
         return $newQuestions;
     }
+    
+    public function contact() {
+        checkUserLogin();
+        $this->display();
+    }
 }

@@ -46,37 +46,27 @@
                                                 </article>
 
 
-                                                <form id="contact-form" class="row" action="__URL__/doModify" method="post">
+                                                <form id="contact-form" class="row" action="__URL__/doModifyPwd" method="post">
 
                                                         <div class="span2">
-                                                                <label for="name">昵称</label>
+                                                                <label for="name">原始密码</label>
                                                         </div>
                                                         <div class="span6">
-                                                                <input type="text" name="nickname" id="nickname" class="required input-xlarge" value="" title="">
+                                                                <input type="password" name="old_pwd" id="old_pwd" class="required input-xlarge" value="" title="">
                                                         </div>
                                                     
                                                         <div class="span2">
-                                                                <label for="name">性别</label>
+                                                                <label for="name">新密码</label>
                                                         </div>
                                                         <div class="span6">
-                                                                <input type="radio" name="gender" id="gender" class="required input-xlarge" value="M" title="" style="height:40px; margin-top:-0px; margin-bottom:5px">
-                                                                <font style="margin-right:120px">男</font>
-                                                                <input type="radio" name="gender" id="gender" class="required input-xlarge" value="F" title="" style="height:40px; margin-top:-0px; margin-bottom:5px">
-                                                                <font style="margin-right:120px">女</font>
+                                                                <input type="password" name="new_Pwd1" id="new_Pwd1" class="required input-xlarge" value="" title="">
                                                         </div>
                                                     
                                                         <div class="span2">
-                                                                <label for="name">邮箱</label>
+                                                                <label for="name">确认新密码</label>
                                                         </div>
                                                         <div class="span6">
-                                                                <input type="text" name="email" id="email" class="required input-xlarge" value="" title="">
-                                                        </div>
-
-                                                        <div class="span2">
-                                                                <label for="message">个人简介</label>
-                                                        </div>
-                                                        <div class="span6">
-                                                                <textarea name="intro" id="intro" class="required span6" rows="6" title=""></textarea>
+                                                                <input type="password" name="new_Pwd2" id="new_Pwd2" class="required input-xlarge" value="" title="">
                                                         </div>
 
                                                         <div class="span6 offset2 bm30">
@@ -114,4 +104,3 @@
 
         </body>
 </html>
-

@@ -15,7 +15,7 @@ class AnswerController extends Controller {
     public function index(){
         checkUserLogin();
     }
-    
+    /*
     public function answerQuestion() {
         $data = array(
             "q_id" => $_GET['id'],
@@ -26,7 +26,7 @@ class AnswerController extends Controller {
         $answer = new AnswerService();
         $answer->answerQuestion($data);
     }
-    
+    */
     public function deleteAnswer() {
         $this->display();
         if(isset($_POST['yes'])) {
